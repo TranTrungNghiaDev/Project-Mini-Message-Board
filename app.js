@@ -11,7 +11,7 @@ app.use(express.urlencoded({extended: true}));
 
 app.use("/", indexRouter);
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT | 8000;
 const HOST = process.env.HOST;
 
 app.listen(PORT, HOST, () => {

@@ -13,6 +13,4 @@ app.use("/", indexRouter);
 
 const PORT = 8000;
 
-app.listen(PORT, () => {
-    console.log(`Project Mini Message Board - listening on PORT : ${PORT}`);
-})
+app.listen(PORT, "0.0.0.0");

@@ -11,6 +11,9 @@ app.use(express.urlencoded({extended: true}));
 
 app.use("/", indexRouter);
 
-const PORT = 8000;
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 
-app.listen(PORT, "0.0.0.0");
+app.listen(PORT, HOST, () => {
+    console.log(`Server is running on ${HOST}:${PORT}`);
+});

@@ -6,11 +6,16 @@
         <h1>This is a home page</h1>
         <h2><%=title %></h2>
         <% messages.forEach(message => { %>
-            <ul>
-                <li>Text: <%=message.text  %> </li>
-                <li>User: <%=message.user  %> </li>
-                <li>Added: <%=message.added  %> </li>
-            </ul>
+            <form action="/detail" method="post">
+                <label for="user">User: </label>
+                <input type="text" name="user" value="<%=message.user  %>" readonly>
+                <label for="message">Message: </label>
+                <input type="text" name="message" value="<%=message.text  %>" readonly>
+                <label for="added">Added: </label>
+                <input type="datetime" name="added" value="<%=message.added  %>" readonly>
+                <button type="submit">Open</button>
+            </form>
         <% }); %>
+        
     </body>
 </html>

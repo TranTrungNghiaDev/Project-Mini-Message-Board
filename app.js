@@ -1,5 +1,5 @@
 const express = require("express");
-const indexRouter = require("./routers/indexRouter");
+const messagesRouter = require("./routers/messagesRouter");
 const path = require("path");
 
 const app = express();
@@ -9,9 +9,9 @@ app.set("view engine", "ejs");
 
 app.use(express.urlencoded({extended: true}));
 
-app.use("/", indexRouter);
+app.use("/", messagesRouter);
 
-const PORT = process.env.PORT | 8000;
+const PORT = process.env.PORT | 3000;
 const HOST = process.env.HOST;
 
 app.listen(PORT, HOST, () => {

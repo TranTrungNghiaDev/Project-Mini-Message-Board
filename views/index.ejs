@@ -4,15 +4,15 @@
     </head>
     <body>
         <h1>This is a home page</h1>
-        <h2><%=title %></h2>
+        <h2>User messages</h2>
         <% messages.forEach(message => { %>
             <form action="/detail" method="post">
                 <label for="user">User: </label>
-                <input type="text" name="user" value="<%=message.user  %>" readonly>
+                <input type="text" name="username" value="<%=message.username  %>" readonly>
                 <label for="message">Message: </label>
                 <input type="text" name="message" value="<%=message.text  %>" readonly>
                 <label for="added">Added: </label>
-                <input type="datetime" name="added" value="<%=message.added  %>" readonly>
+                <input type="date" name="added" value="<%=message.added  %>" readonly>
                 <button type="submit">Open</button>
             </form>
         <% }); %>
